@@ -48,7 +48,7 @@ public class Linkedlist {
         return x;
     }
 
-    //특정 위치에 노드를 추가하는 메서드
+    //특정 위치(중간)에 노드를 추가하는 메서드
     public void add(int k, Object input){
         if(k == 0){
             addFirst(input);
@@ -64,5 +64,22 @@ public class Linkedlist {
                 tail = newNode;
             }
         }
+    }
+
+
+    public String toString(){
+        if(head == null){
+            return "[]";
+        }
+        Node temp = head;
+        String str = "[";
+
+        while(temp.next != null){
+            str += temp.data + ", ";
+            temp = temp.next;
+        }
+
+        str += temp.data; //마지막 노드를 출력결과에 포함시킴
+        return str+"]";
     }
 }
